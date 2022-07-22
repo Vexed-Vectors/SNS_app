@@ -1,0 +1,5 @@
+ab apne ko ek channels ko banane ke liye form banana hai ->DONE     
+
+ab apne ko posts add karne aur view karne ka system banana hai ->DONE, unpe upvote, downvote, comment bhi
+
+

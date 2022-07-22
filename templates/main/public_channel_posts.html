@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><center><i>KaChat!</i></center></h1>
+      <center><h2>Welcome, <u>{{user.username}}</u> to the {{channel_name}} channel             <h4>Creator->{{channel_creator}}</h4></h2>
+      <h2>This channel is for -> {{channel_subject}}</h2>
+      
+       <hr>
+       <br>
+       <h3>This is a public channel, feel free to share your thoughts here</h3></center>
+       <br>
+       <br>
+       <center><a href="{% url 'pub_add_post' channel_name%}">   <button>Add a post of your own!</button></a></center>
+       <br><br>
+       List of posts in this channel:-
+       <ul>
+       {%for post in channel_posts%}
+       <fieldset>
+        <legend><h3>{{post.post_title}}</h3></legend>
+            <h5><i>By ~ {{post.author}}</i></h5>
+
+            <h4><i>{{post.post_content}}</i></h4>
+            <form action="{% url 'channel_posts' channel_name%}" method='GET'>
+                <input type="submit" name="{{post.id}}" value='UPVOTE'>&nbsp &nbsp &nbsp &nbsp<input type="submit" name="{{post.id}}{{post.id}}" value='DOWNVOTE'>
+            </form>
+
+       </fieldset>
+
+       {%endfor%}
+    
+       
+</body>
+</html>
