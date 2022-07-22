@@ -1,2 +1,2 @@
 # SNS_app
-SNS_app with channels fucntionality
+Basic SNS_app with channels fucntionality
