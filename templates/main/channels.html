@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><center><i>KaChat!</i></center></h1>
+      <h2>Welcome,<u> {{user.username}}</u> </h2>
+       <hr>
+       <br>
+       <h3>Create a channel of your own:-</h3>
+       <ul>
+       <li>   <h4><a href="{% url 'public_channel_form'%}">Create public channel</a></h4></li>
+       <li><h4><a href="">Create private channel</a></h4></li>
+    </ul>
+    <br>
+    <br>
+    <h3>List of pre-existing channels:-  Just click on a channel to see the posts in that channel and all the comments</h3>
+    <br>
+    <h4>Public Channels:-</h4>
+    <ol>
+    {% for channel in public_channels%}
+        <li>Channel name -><a href="{% url 'channel_posts' channel.pub_channel_name%}">{{channel.pub_channel_name}}</a>; Channel subject matter ->{{channel.channel_subject}}</li>
+    {%endfor%}
+    </ol>
+
+
+
+
+       
+
+
+</body>
+</html>

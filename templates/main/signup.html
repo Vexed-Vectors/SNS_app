@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><center>Sign up to KaChat!</center></h1>
+    <hr>
+    <center>
+    {% for message in messages%}
+    <h5>{{message}}</h5>
+    {%endfor%}
+    <form action="signup", method="post">
+        {% csrf_token%}
+        <p>Username:</p>
+        <input type="text" name="username">
+        <p>First Name:</p>
+        <input type="text" name="first_name">
+        <p>Last name:</p>
+        <input type="text" name="last_name">
+        <p>Email:</p>
+        <input type="email" name="email">
+        <p>Enter desired Password:</p>
+        <input type="password" name="password">
+        <p>Confirm Password:</p>
+        <input type="password" name="password2">
+        <br>
+        <br>
+        <input type="submit">
+    </form></center>
+</body>
+</html>

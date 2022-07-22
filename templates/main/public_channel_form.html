@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><i><h1>KaChat!</h1></i></center>
+    <hr>
+    <h3>Fill the form below to make your own public channel</h3>
+    <form action="public_channel_form" method='POST'>
+        {% csrf_token %}
+        <fieldset>
+            <legend>Enter your channel name:</legend>
+            <input type="textbox" name= 'pub_channel_name' >
+        </fieldset>
+            <br>
+            <br>
+        <fieldset>
+            <legend>Enter your channel subject (what will be the theme of this channel):</legend>
+            <input type="textbox" name= 'channel_subject' >
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit">
+        
+        <br>
+        <br>
+
+    </form>
+
+
+</body>
+</html>

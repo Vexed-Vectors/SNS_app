@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h2>Welcome, <u>{{user.username}}</u> to the {{channel_name}} channel    
+         <h4>Creator->{{channel_creator}}</h4>
+        </h2>
+        <h2>This channel is for -> {{channel_subject}}</h2>
+        
+         <hr>
+         <br>
+         <h3>This is a public channel, add a post by filling the form below:-</h3></center>
+            <br><br>
+         <center>
+            <fieldset>    <legend><h1><strong>Add Post</strong></h1>     </legend>
+                <center><form action="{% url 'pub_add_post' channel_name %}" method='POST'>
+                    {%csrf_token%}
+                
+                    <br>
+                    <p>
+                    Enter the title of the post:
+                    <br><br>
+                    <input type="text", name ='post_title', style='width:300px; height:100px'>
+                    </p>   
+                    <p>
+                        <br><br><br>
+                    Enter the content of the post:
+                    <br><br>
+                    <input type="textbox", name ='post_content', style="width: 500px; height: 300px">
+
+                    </p>
+                    <input type="submit", style="height: 50px; width:300px">     
+                </form></center>
+            </fieldset>
+         </center>
+</body>
+</html>
